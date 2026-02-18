@@ -5,23 +5,23 @@ int MyDayTime::monthes[] = {31, 28, 31,30,31,30,31,31,30,31,30,31};
 void MyDayTime::incrtime() {
 	if (day > monthes[month]) {
 		++month;
+		day -= monthes[month];
 		if (month > 12) {
 			month = 1;
 			year += 1;
 		}
-		day -= monthes[month - 1];
 	}
 }
 
 void MyDayTime::decrtime() {
 	day -= 1;
+	day -= monthes[month];
 	if (day < 1) {
 		--month;
 		if (month < 1) {
 			month = 12;
 			year -= 1;
 		}
-		day -= monthes[month - 1];
 	}
 }
 
