@@ -9,7 +9,7 @@ void MyDayTime::incrtime() {
 			month = 1;
 			year += 1;
 		}
-		day -= monthes[month];
+		day -= monthes[month - 1];
 	}
 }
 
@@ -21,7 +21,7 @@ void MyDayTime::decrtime() {
 			month = 12;
 			year -= 1;
 		}
-		day -= monthes[month];
+		day -= monthes[month - 1];
 	}
 }
 
