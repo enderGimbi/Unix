@@ -20,7 +20,7 @@ public:
     MyDayTime(int year, int month,int day,int hour,int minute,int second);
     MyDayTime(long long);
     MyDayTime(const MyDayTime& other);
-    ~MyDayTime();
+    ~MyDayTime(); // деструктор
     int GetYear();
     int GetMonth();
     int GetDay();
@@ -49,36 +49,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const MyDayTime& time);
     friend std::istream& operator>>(std::istream& is, MyDayTime& time);
 
-    int compr(const MyDayTime& date1) {
-        if (year > date1.year) {
-            return 1;
-        }
-        if (year < date1.year) {
-            return -1;
-        }
-        else {
-            if (month > date1.month) {
-                return 1;
-            }
-            if (month < date1.month) {
-                return -1;
-            }
-            else {
-                if (day > date1.day) {
-                    return 1;
-                }
-                if (day < date1.day) {
-                    return -1;
-                }
-                else {
-                    return 0;
-                }
-            }
-        }
-    }
-    void printDate() {
-        printf("%02d.%02d.%02d  %02d:%02d:%02d\n", day, month, year, hour, minute, seconds);
-    };
-
+    int compr(const MyDayTime& date1);
+    void printDate();
 };
 

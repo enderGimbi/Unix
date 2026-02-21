@@ -3,10 +3,6 @@
 #include"MyDayTime.h"
 using namespace std;
 
-void myPrint(MyDayTime& time) {
-    time.printDate();
-}
-
 int main(){
     setlocale(LC_ALL, "rus");
     MyDayTime date1 = MyDayTime(2027,2,1); // Дата 1
@@ -29,17 +25,6 @@ int main(){
         break;
     }
     MyDayTime myTime = MyDayTime(time(NULL));
-    date1 += date2;
-    date1.printDate();
-    myTime.printDate();
-
-    MyDayTime date3; 
-    date3 = date2 + date1;
-    MyDayTime time = date3++;
-    myPrint(time);
-    date3.printDate();
-
-    cin >> date3;
-    cout << date3;
+    cout << myTime;
 }
 

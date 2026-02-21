@@ -248,3 +248,35 @@ std::istream& operator>>(std::istream& is, MyDayTime& time) {
 	is >> time.seconds;
 	return is;
 }
+
+int MyDayTime::compr(const MyDayTime& date1) {
+	if (year > date1.year) {
+		return 1;
+	}
+	if (year < date1.year) {
+		return -1;
+	}
+	else {
+		if (month > date1.month) {
+			return 1;
+		}
+		if (month < date1.month) {
+			return -1;
+		}
+		else {
+			if (day > date1.day) {
+				return 1;
+			}
+			if (day < date1.day) {
+				return -1;
+			}
+			else {
+				return 0;
+			}
+		}
+	}
+}
+
+void MyDayTime::printDate() {
+	printf("%02d.%02d.%02d  %02d:%02d:%02d\n", day, month, year, hour, minute, seconds);
+}
